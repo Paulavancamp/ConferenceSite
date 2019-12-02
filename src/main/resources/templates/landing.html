@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/landing.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Conference Home Page</title>
+</head>
+
+<body>
+		<h1 id=siteheading>Conference Website</h1>
+		
+		<a href = "/reviewPaper" >
+			<button id=SubmitR>Review a Paper </button>
+		</a>
+		<a href = "/submitPaper" >
+			<button id=SubmitP> Submit a Paper </button>
+		</a>
+		
+		<a href = "#" >
+			<button id=settings> Settings </button>
+		</a>
+		
+		<div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="Search Papers by Keyword">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+  <table>
+    <tr>
+    	<th> Paper Name </th> 
+   	 	<th> ID Number </th>
+    	<th> Topic </th>
+    	<th> Author </th>
+    </tr>
+    <tr>
+      <td>Sample paper</td>
+      <td>Sample number</td>
+      <td>Sample topic</td>
+      <td>Sample author</td>
+    </tr>
+  </table>
+  <button id=toTop><a href=#siteheading>Back To Top</a></button>
+</div>
+		
+</body>
+
+</html>

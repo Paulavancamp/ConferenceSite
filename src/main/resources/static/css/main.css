@@ -1,0 +1,75 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+button{
+  font-size: 20px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  border-radius:5px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+.wrap{
+  width: 50%;
+  height:75px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}
+
+#siteheading{
+  height:19%;
+  width:100%;
+  color: #00B4CC;
+  text-align:center;
+  border-bottom: solid #00B4CC 3px;
+  margin-bottom:50px;
+}
+
+table{
+  width:90%;
+  border-collapse:collapse;
+  margin:5%;
+  text-align:left;
+  
+}
+table th{
+  border-bottom: solid  #00B4CC 3px;
+}
+table td{
+  border-bottom: solid  #00B4CC 1px;
+}
+
+
+#home{
+  width:5%;
+  height:50px;
+  border-radius: 5px;
+  position:absolute;
+  top:30%;
+  left:5%;
+  font-size:30px;
+}
+
+form input{
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-size: 13px;
+}
+
+.radio{
+	padding:3px;
+	margin:3px;
+	width:5%;
+}

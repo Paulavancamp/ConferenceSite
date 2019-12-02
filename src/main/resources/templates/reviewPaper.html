@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Review Paper</title>
+</head>
+
+<body>
+		<h1 id=siteheading>Conference Website</h1>
+		
+		<a href=/landing><button id=home> <i class="fa fa-home"></i> </button></a>
+		
+		<div class="wrap">
+  			<h3>Please enter all relevant information.</h3>
+   			<form action="#" th:action="@{/submitReview}" method="post">
+    		<table>
+       			<colgroup>
+       				<col style="width: 35%;">
+       				<col style="width: 65%;">
+      			</colgroup>
+        		<tr>
+          			<td>Reviewer Email</td>
+          			<td><input type="text" placeholder="person@email.com"></td>
+       			</tr>
+      			<tr>
+          			<td>Paper ID</td>
+          			<td><input type="text" placeholder="00000"></td>
+       			</tr>
+       			<tr>
+          			<td>Technical Merit</td>
+          			<td>
+						  1<input class=radio type="radio" name="merit" value="1">
+						  2<input class=radio type="radio" name="merit" value="2">  
+						  3<input class=radio type="radio" name="merit" value="3">
+						  4<input class=radio type="radio" name="merit" value="4">
+						  5<input class=radio type="radio" name="merit" value="5">  
+						  6<input class=radio type="radio" name="merit" value="6">
+						  7<input class=radio type="radio" name="merit" value="7">
+						  8<input class=radio type="radio" name="merit" value="8">  
+						  9<input class=radio type="radio" name="merit" value="9">
+						 10<input class=radio type="radio" name="merit" value="10">
+					</td>
+      			</tr>
+       			<tr>
+          			<td>Readability</td>
+          			<td>
+						  1<input class=radio type="radio" name="read" value="1">
+						  2<input class=radio type="radio" name="read" value="2">  
+						  3<input class=radio type="radio" name="read" value="3">
+						  4<input class=radio type="radio" name="read" value="4">
+						  5<input class=radio type="radio" name="read" value="5">  
+						  6<input class=radio type="radio" name="read" value="6">
+						  7<input class=radio type="radio" name="read" value="7">
+						  8<input class=radio type="radio" name="read" value="8">  
+						  9<input class=radio type="radio" name="read" value="9">
+						 10<input class=radio type="radio" name="read" value="10">
+					</td>
+       			</tr>
+       			<tr>
+          			<td>Originality</td>
+          			<td>
+						  1<input class=radio type="radio" name="originality" value="1">
+						  2<input class=radio type="radio" name="originality" value="2">  
+						  3<input class=radio type="radio" name="originality" value="3">
+						  4<input class=radio type="radio" name="originality" value="4">
+						  5<input class=radio type="radio" name="originality" value="5">  
+						  6<input class=radio type="radio" name="originality" value="6">
+						  7<input class=radio type="radio" name="originality" value="7">
+						  8<input class=radio type="radio" name="originality" value="8">  
+						  9<input class=radio type="radio" name="originality" value="9">
+						 10<input class=radio type="radio" name="originality" value="10">
+					</td>
+       			</tr>
+       			<tr>
+          			<td>Relevance</td>
+          			<td>
+						  1<input class=radio type="radio" name="relevance" value="1">
+						  2<input class=radio type="radio" name="relevance" value="2">  
+						  3<input class=radio type="radio" name="relevance" value="3">
+						  4<input class=radio type="radio" name="relevance" value="4">
+						  5<input class=radio type="radio" name="relevance" value="5">  
+						  6<input class=radio type="radio" name="relevance" value="6">
+						  7<input class=radio type="radio" name="relevance" value="7">
+						  8<input class=radio type="radio" name="relevance" value="8">  
+						  9<input class=radio type="radio" name="relevance" value="9">
+						 10<input class=radio type="radio" name="relevance" value="10">
+					</td>
+       			</tr>
+       			<tr>
+          			<td>Overall Recommendation</td>
+          			<td>
+						  1<input class=radio type="radio" name="all" value="1">
+						  2<input class=radio type="radio" name="all" value="2">  
+						  3<input class=radio type="radio" name="all" value="3">
+						  4<input class=radio type="radio" name="all" value="4">
+						  5<input class=radio type="radio" name="all" value="5">  
+						  6<input class=radio type="radio" name="all" value="6">
+						  7<input class=radio type="radio" name="all" value="7">
+						  8<input class=radio type="radio" name="all" value="8">  
+						  9<input class=radio type="radio" name="all" value="9">
+						 10<input class=radio type="radio" name="all" value="10">
+					</td>
+       			</tr>
+       			<tr>
+          			<td>Comments for Committee</td>
+          		<td><input type="text" placeholder="  "></td>
+       			</tr>
+       			<tr>
+          			<td>Comments for Author</td>
+          		<td><input type="text" placeholder="  "></td>
+       			</tr>
+     		</table>
+      		<button type="submit" id=submitform> Submit </button>
+ 		 </form>
+ 		 <br>
+ 		 <p th:text="${message}" />
+ 	 </div>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<title>Log In Page</title>
+</head>
+
+<body>
+	<h1 id=siteheading>Conference Website</h1>
+	<div class="wrap">
+		<p th:text="${message}" />
+		
+		<form action="#" th:action="@{/login}" th:object="${participator}" method="post">
+			<input type="text" placeholder="Email" th:field="*{email}"/>
+    		<input type="text" placeholder="Password"  th:field="*{password}"/>
+			<input type="submit" value="Log In" />
+		</form>
+		
+		<a href = "/register" >
+			<button>Register Now! </button>
+		</a>
+	</div>
+</body>
+
+</html>

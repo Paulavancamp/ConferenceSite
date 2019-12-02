@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/submitPaper.css" />
+<title>Submit Paper</title>
+</head>
+
+<body>
+		<h1 id=siteheading>Conference Website</h1>
+		
+		<a href=/landing><button id=home> <i class="fa fa-home"></i> </button></a>
+		<div class="wrap">
+  			<h3>Please enter all relevant information.  After submitting the form, you will have the option to add co-authors </h3>
+   			<form action="#" th:action="@{/submitNewPaper}" method="post">
+    		<table>
+       			<colgroup>
+       				<col style="width: 25%;">
+       				<col style="width: 75%;">
+      			</colgroup>
+        		<tr>
+          			<td>Name</td>
+          			<td><input type="text" placeholder="  "></td>
+       			</tr>
+      			<tr>
+          			<td>Topic</td>
+          			<td><input type="text" placeholder="  "></td>
+       			</tr>
+       			<tr>
+          			<td>File Name</td>
+          			<td><input type="text" placeholder="  "></td>
+      			</tr>
+       			<tr>
+          			<td>Contact Author Email</td>
+          		<td><input type="text" placeholder="  "></td>
+       			</tr>
+     		</table>
+      		<button type="submit" id=submitform> Submit </button>
+ 		 </form>
+ 		 <br>
+ 		 <p th:text="${message}" />
+ 	 </div>
+  
+</body>
+
+</html>
