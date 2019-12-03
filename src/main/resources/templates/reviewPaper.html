@@ -15,7 +15,7 @@
 		
 		<div class="wrap">
   			<h3>Please enter all relevant information.</h3>
-   			<form action="#" th:action="@{/submitReview}" method="post">
+   			<form action="#" th:action="@{/submitReview}" th:object="${newReview}" method="post">
     		<table>
        			<colgroup>
        				<col style="width: 35%;">
@@ -23,31 +23,29 @@
       			</colgroup>
         		<tr>
           			<td>Reviewer Email</td>
-          			<td><input type="text" placeholder="person@email.com"></td>
+          			<td><input type="text" placeholder="person@email.com" th:field="*{revemail}"></td>
        			</tr>
       			<tr>
           			<td>Paper ID</td>
-          			<td><input type="text" placeholder="00000"></td>
+          			<td><input type="text" placeholder="00000" th:field="*{paperID}"></td>
        			</tr>
        			<tr>
-          			<td>Technical Merit</td>
+          			<td>Technical Merit</td>	
           			<td>
-						  1<input class=radio type="radio" name="merit" value="1">
-						  2<input class=radio type="radio" name="merit" value="2">  
-						  3<input class=radio type="radio" name="merit" value="3">
-						  4<input class=radio type="radio" name="merit" value="4">
-						  5<input class=radio type="radio" name="merit" value="5">  
-						  6<input class=radio type="radio" name="merit" value="6">
-						  7<input class=radio type="radio" name="merit" value="7">
-						  8<input class=radio type="radio" name="merit" value="8">  
-						  9<input class=radio type="radio" name="merit" value="9">
-						 10<input class=radio type="radio" name="merit" value="10">
+	          			<span th:each="radioValue: ${allValues}">
+						    <input type="radio" 
+						        th:field="*{techMerit}"
+						        th:value="${radioValue}" />
+						    <label 
+						        th:for="${#ids.prev('radioButtonSelectedValue')}"
+						        th:text="${radioValue}"></label>
+						 </span>
 					</td>
       			</tr>
        			<tr>
           			<td>Readability</td>
           			<td>
-						  1<input class=radio type="radio" name="read" value="1">
+						  1<input class=radio type="radio" name="read" value="1" th:field="*{readability}">
 						  2<input class=radio type="radio" name="read" value="2">  
 						  3<input class=radio type="radio" name="read" value="3">
 						  4<input class=radio type="radio" name="read" value="4">
@@ -62,7 +60,7 @@
        			<tr>
           			<td>Originality</td>
           			<td>
-						  1<input class=radio type="radio" name="originality" value="1">
+						  1<input class=radio type="radio" name="originality" value="1" th:field="*{originality}">
 						  2<input class=radio type="radio" name="originality" value="2">  
 						  3<input class=radio type="radio" name="originality" value="3">
 						  4<input class=radio type="radio" name="originality" value="4">
@@ -77,7 +75,7 @@
        			<tr>
           			<td>Relevance</td>
           			<td>
-						  1<input class=radio type="radio" name="relevance" value="1">
+						  1<input class=radio type="radio" name="relevance" value="1" th:field="*{relevance}">
 						  2<input class=radio type="radio" name="relevance" value="2">  
 						  3<input class=radio type="radio" name="relevance" value="3">
 						  4<input class=radio type="radio" name="relevance" value="4">
@@ -92,7 +90,7 @@
        			<tr>
           			<td>Overall Recommendation</td>
           			<td>
-						  1<input class=radio type="radio" name="all" value="1">
+						  1<input class=radio type="radio" name="all" value="1" th:field="*{overallrecomm}">
 						  2<input class=radio type="radio" name="all" value="2">  
 						  3<input class=radio type="radio" name="all" value="3">
 						  4<input class=radio type="radio" name="all" value="4">
@@ -106,11 +104,11 @@
        			</tr>
        			<tr>
           			<td>Comments for Committee</td>
-          		<td><input type="text" placeholder="  "></td>
+          		<td><input type="text" placeholder="  " th:field="*{commentForCommittee}"></td>
        			</tr>
        			<tr>
           			<td>Comments for Author</td>
-          		<td><input type="text" placeholder="  "></td>
+          		<td><input type="text" placeholder="  " th:field="*{commentForAuthor}"></td>
        			</tr>
      		</table>
       		<button type="submit" id=submitform> Submit </button>

@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.domain.participator;
-import com.example.demo.service.participatorService;
+import com.example.demo.domain.Reviews;
+import com.example.demo.service.ReviewsService;
 
 
 @Controller
@@ -24,22 +24,27 @@ public class reviewController {
 
 	private static final Logger logger = LoggerFactory.getLogger(reviewController.class);
 	
+	@Autowired
+	ReviewsService rService; 
 	
     @RequestMapping(value = "/reviewPaper")
-    public String loadReviewPage( Model model) {
+    public String blankReview(@ModelAttribute Reviews review, Model model) {
     	
+    	review = new Reviews("", "", "", "", "", "", "", "", "");
+    	model.addAttribute("newReview", review);
         return "reviewPaper";
         
     }   
       
     @RequestMapping(value = "/submitReview", method = RequestMethod.POST)
-    public String saveParticipator(Model model) {
+    public String saveReview(@ModelAttribute Reviews review, Model model) {
 
+    	rService.createNewReview(review);
     	model.addAttribute("message","Success");
-    	
+    	model.addAttribute("newReview", review);
         return "reviewPaper";
         
-    }   
+    }
 	
     
 	

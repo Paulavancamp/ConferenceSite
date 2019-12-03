@@ -30,9 +30,9 @@ public class HomeController {
     @RequestMapping(value = "/home", method=RequestMethod.GET)
     public String greeting(@ModelAttribute participator temp, Model model) {
     	
-    	temp = new participator("", "");
+    	temp = new participator("", "", "", "", "", "", "");
     	model.addAttribute("participator", temp);
-    	model.addAttribute("message","Howdy Partner");
+    	//model.addAttribute("message","Howdy Partner");
         return "home";
         
     }   
@@ -42,7 +42,7 @@ public class HomeController {
     	//call function to check if employee exists and passwords match
     	model.addAttribute("participator", temp);
     	
-    	return "home";
+    	return "/landing";
         
     }   
     

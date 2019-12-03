@@ -9,7 +9,6 @@
 <body>
 	<h1 id=siteheading>Conference Website</h1>
 	<div class="wrap">
-		<p th:text="${message}" />
 		
 		<form action="#" th:action="@{/login}" th:object="${participator}" method="post">
 			<input type="text" placeholder="Email" th:field="*{email}"/>

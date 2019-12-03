@@ -28,22 +28,31 @@ public class CompanyController {
 	participatorService pService;
 	
     @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String register(@ModelAttribute participator participator, Model model) {
+    public String register(@ModelAttribute participator person, Model model) {
 
-    	participator = new participator("", "");
-    	model.addAttribute("participator", participator);
+    	person = new participator("", "", "", "", "", "", "");
+    	model.addAttribute("participator", person);
         return "register";
         
     }
 	
     @RequestMapping(value = "/createNewParticipator", method = RequestMethod.POST)
-    public String saveParticipator(@ModelAttribute participator participator, Model model) {
+    public String saveParticipator(@ModelAttribute participator person, Model model) {
 
-    	pService.createNewParticipator(participator);
-    	model.addAttribute("message","Success");
-    	model.addAttribute("participator", participator);
+    	pService.createNewParticipator(person);
+    	/*
+    	if(person == author) {
+    		add to author table using person.email
+    	}
+    	if(person == reviewer) {
+    		add to reviewer table 
+    	}
+    	*/
     	
-        return "createNewParticipator";
+    	model.addAttribute("message","Success");
+    	model.addAttribute("participator", person);
+    	
+        return "register";
         
     }   
 	
