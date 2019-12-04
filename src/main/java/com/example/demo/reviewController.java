@@ -32,6 +32,9 @@ public class reviewController {
     	
     	review = new Reviews("", "", "", "", "", "", "", "", "");
     	model.addAttribute("newReview", review);
+    	
+    	model.addAttribute("allValues", populateRadio());
+    	
         return "reviewPaper";
         
     }   
@@ -42,8 +45,25 @@ public class reviewController {
     	rService.createNewReview(review);
     	model.addAttribute("message","Success");
     	model.addAttribute("newReview", review);
+    	model.addAttribute("allValues", populateRadio());
         return "reviewPaper";
         
+    }
+    
+    private List<String> populateRadio(){
+    	List<String> allValues = new ArrayList<String>();
+    	allValues.add("1");
+    	allValues.add("2");
+    	allValues.add("3");
+    	allValues.add("4");
+    	allValues.add("5");
+    	allValues.add("6");
+    	allValues.add("7");
+    	allValues.add("8");
+    	allValues.add("9");
+    	allValues.add("10");
+    	
+    	return allValues;
     }
 	
     

@@ -17,14 +17,16 @@ public interface CompanyMapper {
 	public void createNewParticipator(participator person);
 	
 
-	/*@Insert("INSERT INTO reviews VALUES (revemail, paperid, techmerit, readability, originality, relavance, "
-			+ "overallrecomm, commentforcommittee, commentforauthor );"
-			+"values (#{revemail}, #{paperID}, #{techMerit}, #{readability}, #{originality}, #{relevance}, "
-			+ "#{overallrecomm}, #{commentForCommittee}, #{commentForAuthor})")*/
-	@Insert("INSERT INTO reviews VALUES (revemail, paperID, techMerit, readability, originality, relavance, "
+	
+	/*@Insert("INSERT INTO reviews VALUES (revemail, paperID, techMerit, readability, originality, relavance, "
 			+ "overallrecomm, commentForCommittee, commentForAuthor );"
 			+"values (#{revemail}, #{paperID}, #{techMerit}, #{readability}, #{originality}, #{relevance}, "
 			+ "#{overallrecomm}, #{commentForCommittee}, #{commentForAuthor})")
-	public void createNewReview(Reviews review);
+	*/
+	
+	//Insert Review into Reviews 
+		@Insert("INSERT INTO reviews VALUES (#{revemail}, #{paperID}, #{techMerit}, #{readability}, #{originality}, #{relevance}, #{overallrecomm}, #{commentForCommittee}, #{commentForAuthor})")
+		public void createNewReview(Reviews review);
+
 	
 }

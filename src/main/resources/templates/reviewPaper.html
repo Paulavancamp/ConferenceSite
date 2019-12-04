@@ -37,7 +37,7 @@
 						        th:field="*{techMerit}"
 						        th:value="${radioValue}" />
 						    <label 
-						        th:for="${#ids.prev('radioButtonSelectedValue')}"
+						        th:for="${#ids.prev('techMerit')}"
 						        th:text="${radioValue}"></label>
 						 </span>
 					</td>
@@ -45,61 +45,52 @@
        			<tr>
           			<td>Readability</td>
           			<td>
-						  1<input class=radio type="radio" name="read" value="1" th:field="*{readability}">
-						  2<input class=radio type="radio" name="read" value="2">  
-						  3<input class=radio type="radio" name="read" value="3">
-						  4<input class=radio type="radio" name="read" value="4">
-						  5<input class=radio type="radio" name="read" value="5">  
-						  6<input class=radio type="radio" name="read" value="6">
-						  7<input class=radio type="radio" name="read" value="7">
-						  8<input class=radio type="radio" name="read" value="8">  
-						  9<input class=radio type="radio" name="read" value="9">
-						 10<input class=radio type="radio" name="read" value="10">
+	          			<span th:each="radioValue: ${allValues}">
+						    <input type="radio" 
+						        th:field="*{readability}"
+						        th:value="${radioValue}" />
+						    <label 
+						        th:for="${#ids.prev('readability')}"
+						        th:text="${radioValue}"></label>
+						 </span>
 					</td>
-       			</tr>
        			<tr>
           			<td>Originality</td>
           			<td>
-						  1<input class=radio type="radio" name="originality" value="1" th:field="*{originality}">
-						  2<input class=radio type="radio" name="originality" value="2">  
-						  3<input class=radio type="radio" name="originality" value="3">
-						  4<input class=radio type="radio" name="originality" value="4">
-						  5<input class=radio type="radio" name="originality" value="5">  
-						  6<input class=radio type="radio" name="originality" value="6">
-						  7<input class=radio type="radio" name="originality" value="7">
-						  8<input class=radio type="radio" name="originality" value="8">  
-						  9<input class=radio type="radio" name="originality" value="9">
-						 10<input class=radio type="radio" name="originality" value="10">
+	          			<span th:each="radioValue: ${allValues}">
+						    <input type="radio" 
+						        th:field="*{originality}"
+						        th:value="${radioValue}" />
+						    <label 
+						        th:for="${#ids.prev('originality')}"
+						        th:text="${radioValue}"></label>
+						 </span>
 					</td>
        			</tr>
        			<tr>
           			<td>Relevance</td>
           			<td>
-						  1<input class=radio type="radio" name="relevance" value="1" th:field="*{relevance}">
-						  2<input class=radio type="radio" name="relevance" value="2">  
-						  3<input class=radio type="radio" name="relevance" value="3">
-						  4<input class=radio type="radio" name="relevance" value="4">
-						  5<input class=radio type="radio" name="relevance" value="5">  
-						  6<input class=radio type="radio" name="relevance" value="6">
-						  7<input class=radio type="radio" name="relevance" value="7">
-						  8<input class=radio type="radio" name="relevance" value="8">  
-						  9<input class=radio type="radio" name="relevance" value="9">
-						 10<input class=radio type="radio" name="relevance" value="10">
+	          			<span th:each="radioValue: ${allValues}">
+						    <input type="radio" 
+						        th:field="*{relevance}"
+						        th:value="${radioValue}" />
+						    <label 
+						        th:for="${#ids.prev('relevance')}"
+						        th:text="${radioValue}"></label>
+						 </span>
 					</td>
        			</tr>
        			<tr>
           			<td>Overall Recommendation</td>
           			<td>
-						  1<input class=radio type="radio" name="all" value="1" th:field="*{overallrecomm}">
-						  2<input class=radio type="radio" name="all" value="2">  
-						  3<input class=radio type="radio" name="all" value="3">
-						  4<input class=radio type="radio" name="all" value="4">
-						  5<input class=radio type="radio" name="all" value="5">  
-						  6<input class=radio type="radio" name="all" value="6">
-						  7<input class=radio type="radio" name="all" value="7">
-						  8<input class=radio type="radio" name="all" value="8">  
-						  9<input class=radio type="radio" name="all" value="9">
-						 10<input class=radio type="radio" name="all" value="10">
+	          			<span th:each="radioValue: ${allValues}">
+						    <input type="radio" 
+						        th:field="*{overallrecomm}"
+						        th:value="${radioValue}" />
+						    <label 
+						        th:for="${#ids.prev('overallrecomm')}"
+						        th:text="${radioValue}"></label>
+						 </span>
 					</td>
        			</tr>
        			<tr>
